@@ -1,11 +1,29 @@
-class SimpleStatement:
+class Statement:
+    pass
+
+
+class Program:
+    def __init__(self, body: list[Statement]):
+        self.body = body
+
+
+class SimpleStatement(Statement):
+    pass
+
+
+class CompoundStatement(Statement):
     pass
 
 
 class Assign(SimpleStatement):
     def __init__(self, left, right):
-        self.left = right
+        self.left = left
         self.right = right
+
+
+class Name:
+    def __init__(self, name):
+        self.name = name
 
 
 class Number:
