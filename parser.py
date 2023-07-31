@@ -33,11 +33,11 @@ class Parser:
 
         @self.pg.production('expression : NUMBER')
         def number(p):
-            return Number(p[0])
+            return Number(p[0].value)
 
         @self.pg.production('name : NAME')
         def name(p):
-            return Name(p[0])
+            return Name(p[0].value)
 
         @self.pg.error
         def error_handle(token):
